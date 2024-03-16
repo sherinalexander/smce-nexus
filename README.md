@@ -1,1 +1,1 @@
-# Informative-kiosk
+# SMCE Nexus
