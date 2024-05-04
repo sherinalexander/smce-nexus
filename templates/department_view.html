@@ -1,0 +1,55 @@
+
+{% include 'header_home.html' %}
+<form action="" method="post">
+    {% csrf_token %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-7">
+            <img src="../../static/image/placement2.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-sm-5">
+            <div class="text-center mt-2 pb-2">
+                <h3>Add New Department</h3>
+            </div>
+            <div class="row">
+                
+                
+                <div class="col-sm-4 pb-2">
+                    Department Name
+                </div>
+                <div class="col-sm-8 pb-2">
+                    <select name="dname" class="form-select" onchange="qrcode()" id="dname">
+                        {% for ob in data%}
+                        <option>{{ob.dname}}</option>
+                    {%endfor%}
+                        
+                    </select>
+                    
+                </div>
+                <div class="col-sm-4 pb-2">
+                   
+                </div>
+                <div class="col-sm-8 pb-2">
+                    <img src="" id="qr" width="200px" alt="">
+                </div>
+               
+                {% for msg in messages%}
+                    <div class="alert alert-danger">
+                        {{msg}}
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+
+    </div>
+</div>
+</form>
+<script>
+    function qrcode(){
+        var qr=document.getElementById('dname').value;
+        console.log(qr)
+        document.getElementById('qr').src="../media/"+qr+".png";
+
+    }
+</script>
+{% include 'footer.html' %}

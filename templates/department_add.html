@@ -1,0 +1,53 @@
+{% include 'header_admin.html' %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="card mb-12">
+        <div class="card-header"><strong>Add New Department</strong></div>
+<div class="container-fluid mt-3">
+    <div class="row">
+        
+        <div class="col-sm-5">
+            
+            <div class="row">
+                
+                
+                <div class="col-sm-4 pb-2">
+                    Department Name
+                </div>
+                <div class="col-sm-8 pb-2">
+                    <input type="text" onkeyup="qrcode()" id="dname"  class="form-control" name="dname">
+                </div>
+                <div class="col-sm-4 pb-2">
+                    Location
+                </div>
+                <div class="col-sm-8 pb-2">
+                    <input type="text" class="form-control" name="loc">
+                    <input type="hidden" name="qr" value="qr" id="qr">
+                </div>
+                <div class="col-sm-4 pb-2">
+                    
+                </div>
+                <div class="col-sm-8 pb-2">
+                    <input type="submit" value="Submit" class="btn btn-success shadow-none" name="save">
+                   
+                </div>
+                {% for msg in messages%}
+                    <div class="alert alert-danger">
+                        {{msg}}
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</form>
+<script>
+    function qrcode(){
+        var qr=document.getElementById('dname').value;
+        document.getElementById('qr').value=qr+".png"
+
+    }
+</script>
+{% include 'footer.html' %}
