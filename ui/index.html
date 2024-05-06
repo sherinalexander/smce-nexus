@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Virtual Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .greeting {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .query-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Campus Virtual Assistant</h1>
+        <p class="greeting">Hello! Welcome to our campus. How can I assist you today?</p>
+        <input type="text" class="query-input" id="user-query" placeholder="Ask your question...">
+        <button class="submit-btn" onclick="handleQuery()">Submit</button>
+    </div>
+
+    <script>
+        function handleQuery() {
+            const userQuery = document.getElementById('user-query').value;
+            // Process the user query and provide a response (you can use JavaScript or connect to a backend API).
+            // For now, let's just display an alert with the query.
+            alert(`User query: ${userQuery}`);
+        }
+    </script>
+</body>
+</html>
